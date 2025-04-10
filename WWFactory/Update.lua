@@ -10,6 +10,8 @@ os.sleep(.4)
 
 shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/WWFactory/Update.lua", "Update")
 os.sleep(.4)
+shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/WWFactory/Util.lua", "Util")
+os.sleep(.4)
 
 
 local fileList = {"Util", "Update"}
