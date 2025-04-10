@@ -1,6 +1,6 @@
 -- 0.1.2
 
-local Util = require("Util.lua")
+local Util = require("Util")
 
 shell.run("delete", "Update")
 os.sleep(.4)
