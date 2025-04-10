@@ -8,9 +8,9 @@ shell.run("delete", "Util")
 os.sleep(.4)
 
 
-shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Update.lua", "Update")
+shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Update.lua", "Update.lua")
 os.sleep(.4)
-shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Util.lua", "Util")
+shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Util.lua", "Util.lua")
 os.sleep(.4)
 
 
