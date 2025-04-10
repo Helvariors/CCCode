@@ -1,6 +1,6 @@
--- 0.1.1
+-- 0.1.2
 
-local Util = require("Util")
+local Util = require("Util.lua")
 
 shell.run("delete", "Update")
 os.sleep(.4)
@@ -8,9 +8,9 @@ shell.run("delete", "Util")
 os.sleep(.4)
 
 
-shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Update.lua", "Update.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Update.lua", "Update")
 os.sleep(.4)
-shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Util.lua", "Util.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Util.lua", "Util")
 os.sleep(.4)
 
 
