@@ -1,32 +1,32 @@
--- 0.1.3
+-- 0.1.4
 
-local Util = require("Util")
+local util = require("util")
 
-shell.run("delete", "Update")
+shell.run("delete", "update")
 os.sleep(.4)
-shell.run("delete", "Util")
-os.sleep(.4)
-
-
-shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Update.lua", "Update")
-os.sleep(.4)
-shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/Util.lua", "Util")
+shell.run("delete", "util")
 os.sleep(.4)
 
 
-local fileList = {"Util", "Update"}
+shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/update.lua", "update")
+os.sleep(.4)
+shell.run("wget", "https://raw.githubusercontent.com/Helvariors/CCCode/main/WWFactory/util.lua", "util")
+os.sleep(.4)
+
+
+local fileList = {"util", "update"}
 
 term.clear()
 
 local previousVersionsTable = nil
 
 if fs.exists("VersionHistory.txt") then
-	previousVersionsTable = Util.loadTable("VersionHistory.txt")
+	previousVersionsTable = util.loadTable("VersionHistory.txt")
 end
 
-if Util.isEmpty(previousVersionsString) then
-	local previousVersionsTable = {Util = "0", Update = "0"}
-	Util.saveTable(previousVersionsTable, "VersionHistory.txt")
+if util.isEmpty(previousVersionsString) then
+	local previousVersionsTable = {util = "0", update = "0"}
+	util.saveTable(previousVersionsTable, "VersionHistory.txt")
 end
 
 for _,i in ipairs(fileList) do
@@ -34,7 +34,7 @@ for _,i in ipairs(fileList) do
 	local file = fs.open(i, "r")
 	local line = file.readLine()
 	local version = string.gsub(line, "-", "")
-	local version = Util.trimSpaces(version)
+	local version = util.trimSpaces(version)
 
 	if not (previousVersionsTable[i] == version) then
 		print(i, ": ", version, " (prev. ", previousVersionsTable[i], ")")
@@ -45,4 +45,4 @@ for _,i in ipairs(fileList) do
 	previousVersionsTable[i] = version
 end
 
-Util.saveTable(previousVersionsTable, "VersionHistory.txt")
+util.saveTable(previousVersionsTable, "VersionHistory.txt")
